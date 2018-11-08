@@ -11,7 +11,68 @@ class Card:
 
 class Deck:
     def __init__(self):
+        # Create a List to Hold all of the Cards in our Deck
         self.card = []
+        # Fill self.card List With Instances of the Class "Card" Starting with Spades
+        self.card.append(Card("Spades", 2, False, False))
+        self.card.append(Card("Spades", 3, False, False))
+        self.card.append(Card("Spades", 4, False, False))
+        self.card.append(Card("Spades", 5, False, False))
+        self.card.append(Card("Spades", 6, False, False))
+        self.card.append(Card("Spades", 7, False, False))
+        self.card.append(Card("Spades", 8, False, False))
+        self.card.append(Card("Spades", 9, False, False))
+        self.card.append(Card("Spades", 10, False, False))
+        # Create Hearts
+        self.card.append(Card("Hearts", 2, False, False))
+        self.card.append(Card("Hearts", 3, False, False))
+        self.card.append(Card("Hearts", 4, False, False))
+        self.card.append(Card("Hearts", 5, False, False))
+        self.card.append(Card("Hearts", 6, False, False))
+        self.card.append(Card("Hearts", 7, False, False))
+        self.card.append(Card("Hearts", 8, False, False))
+        self.card.append(Card("Hearts", 9, False, False))
+        self.card.append(Card("Hearts", 10, False, False))
+        # Create Clubs
+        self.card.append(Card("Clubs", 2, False, False))
+        self.card.append(Card("Clubs", 3, False, False))
+        self.card.append(Card("Clubs", 4, False, False))
+        self.card.append(Card("Clubs", 5, False, False))
+        self.card.append(Card("Clubs", 6, False, False))
+        self.card.append(Card("Clubs", 7, False, False))
+        self.card.append(Card("Clubs", 8, False, False))
+        self.card.append(Card("Clubs", 9, False, False))
+        self.card.append(Card("Clubs", 10, False, False))
+        # Create Diamonds
+        self.card.append(Card("Diamonds", 2, False, False))
+        self.card.append(Card("Diamonds", 3, False, False))
+        self.card.append(Card("Diamonds", 4, False, False))
+        self.card.append(Card("Diamonds", 5, False, False))
+        self.card.append(Card("Diamonds", 6, False, False))
+        self.card.append(Card("Diamonds", 7, False, False))
+        self.card.append(Card("Diamonds", 8, False, False))
+        self.card.append(Card("Diamonds", 9, False, False))
+        self.card.append(Card("Diamonds", 10, False, False))
+        # Create Face Cards and Ace for Suit Spades
+        self.card.append(Card("Spades", 10, "King", False))
+        self.card.append(Card("Spades", 10, "Queen", False))
+        self.card.append(Card("Spades", 10, "Jack", False))
+        self.card.append(Card("Spades", 11, False, True))
+        # Create Face Cards and Ace for Suit Hearts
+        self.card.append(Card("Hearts", 10, "King", False))
+        self.card.append(Card("Hearts", 10, "Queen", False))
+        self.card.append(Card("Hearts", 10, "Jack", False))
+        self.card.append(Card("Hearts", 11, False, True))
+        # Create Face Cards and Ace for Suit Clubs
+        self.card.append(Card("Clubs", 10, "King", False))
+        self.card.append(Card("Clubs", 10, "Queen", False))
+        self.card.append(Card("Clubs", 10, "Jack", False))
+        self.card.append(Card("Clubs", 11, False, True))
+        # Create Face Cards and Ace for Suit Diamonds
+        self.card.append(Card("Diamonds", 10, "King", False))
+        self.card.append(Card("Diamonds", 10, "Queen", False))
+        self.card.append(Card("Diamonds", 10, "Jack", False))
+        self.card.append(Card("Diamonds", 11, False, True))
 
 class Hand:
     def __init__(self):
