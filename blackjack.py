@@ -75,8 +75,13 @@ class Deck:
         self.card.append(Card("Diamonds", 11, False, True))
 
     def shuffle(self):
-        # print(self.card[25].suit)
-        placeholder = self.card[card_one]
+        for i in range(1000):
+            firstRandomCardIndex = random.randint(0,51)
+            secondRandomCardIndex = random.randint(0,51)
+            placeholder = self.card[firstRandomCardIndex]
+            self.card[firstRandomCardIndex] = self.card[secondRandomCardIndex]
+            self.card[secondRandomCardIndex] = placeholder
+
 
 class Hand:
     def __init__(self):
@@ -91,9 +96,18 @@ player = PokerPlayer(False)
 dealer = PokerPlayer(True)
 deck = Deck()
 
-print(deck.card[25].suit)
-print(deck.card[25].value)
-print(deck.card[25].face)
-print(deck.card[25].ace)
+print("DECK (NOT SHUFFLED):")
+print(deck.card[0].suit)
+print(deck.card[0].value)
+print(deck.card[0].face)
+print(deck.card[0].ace)
+
+deck.shuffle()
+
+print("DECK (SHUFFLED):")
+print(deck.card[0].suit)
+print(deck.card[0].value)
+print(deck.card[0].face)
+print(deck.card[0].ace)
 
 deck.shuffle()
