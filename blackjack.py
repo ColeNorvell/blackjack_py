@@ -82,6 +82,9 @@ class Deck:
             self.card[firstRandomCardIndex] = self.card[secondRandomCardIndex]
             self.card[secondRandomCardIndex] = placeholder
 
+    def deal(self):
+        self.top_card = self.top_card + 1
+        return self.card[self.top_card - 1]
 
 class Hand:
     def __init__(self):
