@@ -74,6 +74,10 @@ class Deck:
         self.card.append(Card("Diamonds", 10, "Jack", False))
         self.card.append(Card("Diamonds", 11, False, True))
 
+    def shuffle(self):
+        # print(self.card[25].suit)
+        placeholder = self.card[card_one]
+
 class Hand:
     def __init__(self):
         self.card = []
@@ -87,4 +91,9 @@ player = PokerPlayer(False)
 dealer = PokerPlayer(True)
 deck = Deck()
 
-print("game working?")
+print(deck.card[25].suit)
+print(deck.card[25].value)
+print(deck.card[25].face)
+print(deck.card[25].ace)
+
+deck.shuffle()
