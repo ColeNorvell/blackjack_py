@@ -8,7 +8,6 @@ class Card:
         self.face = face
         self.ace = ace
 
-
 class Deck:
     def __init__(self):
         # Create a List to Hold all of the Cards in our Deck
@@ -75,6 +74,7 @@ class Deck:
         self.card.append(Card("Diamonds", 11, False, True))
 
     def shuffle(self):
+        self.top_card = 0
         for i in range(1000):
             firstRandomCardIndex = random.randint(0,51)
             secondRandomCardIndex = random.randint(0,51)
@@ -83,34 +83,27 @@ class Deck:
             self.card[secondRandomCardIndex] = placeholder
 
     def deal(self):
-        self.top_card = self.top_card + 1
         return self.card[self.top_card - 1]
-
-class Hand:
-    def __init__(self):
-        self.card = []
+        self.top_card = self.top_card + 1
 
 class PokerPlayer:
     def __init__(self, dealer):
         self.dealer = dealer  # dealer is a boolean value
-        self.hand = Hand()
+        self.hand = []
+        self.number_of_cards_held = 0
 
 player = PokerPlayer(False)
 dealer = PokerPlayer(True)
 deck = Deck()
 
-print("DECK (NOT SHUFFLED):")
-print(deck.card[0].suit)
-print(deck.card[0].value)
-print(deck.card[0].face)
-print(deck.card[0].ace)
-
 deck.shuffle()
 
-print("DECK (SHUFFLED):")
-print(deck.card[0].suit)
-print(deck.card[0].value)
-print(deck.card[0].face)
-print(deck.card[0].ace)
+player.hand.append(deck.deal())
+dealer.hand.append(deck.deal())
+player.hand.append(deck.deal())
+dealer.hand.append(deck.deal())
 
-deck.shuffle()
+print("Dealers First Card: " + dealer.hand[0].suit)
+print("Dealers Second Card: " + dealer.hand[1].suit)
+print("Players First Card: " + player.hand[0].suit)
+print("Players Second Card: " + player.hand[1].suit)
